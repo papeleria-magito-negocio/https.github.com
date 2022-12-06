@@ -1,0 +1,306 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+<title>Maxthon Mobile - Make Your Browser</title>
+<meta charset="UTF-8">
+<meta property="og:title" content="Wow, I just created an awesome Android web browser here: custom.maxthon.com" />
+<meta property="og:description" content="Wow, I just created an awesome Android web browser here: custom.maxthon.com" />
+<meta property="og:url" content="https://custom.maxthon.com" />
+
+<link rel='stylesheet' href='/min/g=css&amp;1389771976' /><link rel="stylesheet" href="/language/en/css/lan.css" />
+
+</head>
+
+<body>
+
+<div class="custom-wrap">
+
+    <!-- .custom-header -->
+<div class="custom-header clearfix">
+    <div class="logo">
+        <a href="/"></a>
+        <span class="mark"></span>
+    </div>
+    <div id="language-option" class="language">
+    	|　<a href="#">English<span class="arrow"></span></a>    </div>
+    <div id="language-select" class="select">
+        <span class="needle"></span>
+        <ul>
+            <!-- <li><a href="#">简体中文</a></li> -->
+            <li><a href="#" lang="en">English</a></li>
+            <li><a href="#" lang="ru">Русский</a></li>
+            <li><a href="#" lang="hu">Magyar</a></li>
+        </ul>
+    </div>
+
+    <div class="sns">
+        <a class="facebook" href="http://facebook.com/maxthon" target="_blank"></a><!--
+        --><a class="twitter" href="http://www.twitter.com/maxthon" target="_blank"></a><!--
+        --><a class="youtube" href="http://youtube.com/maxthontheater" target="_blank"></a>
+    </div>
+
+    			<!-- 未登录 --><div class="welcome"><a href="/android/makeyourbrowser">Home</a>
+                    |　<a href="http://www.maxthon.com/maxthon-mobile/" target="_blank">Maxthon</a>
+                    |　<a id="login" href="#">Login</a></div>
+    	        <div id="account-select" class="select">
+        <span class="needle"></span>
+        <ul>
+            <li><a href="/setting/">APK package</a></li>
+            <li><a id="exit" href="https://www.facebook.com/logout.php?next=https%3A%2F%2Fcustom.maxthon.com%2Flogout.php&access_token=214213965365266%7C10efc18b86339c8baa4c30e4583a876c">Sign out</a></li>
+        </ul>
+    </div>
+
+</div>
+<!-- // .custom-header -->
+
+
+
+
+    <!-- .custom-mode -->
+    <form id="custom-form" class="custom-mode" action="/common/makebrowser.php">
+
+        <div class="mode mode-name line">
+            <h2 class="title"><span>1</span>Pick a name for your browser</h2>
+            <p class="tips">Please enter a browser name <span class="input-tips">(max 14 characters: supports English alphabet, Russian letter, numbers and spaces)</span></p>
+            <label for="browser-name">Browser name:</label>
+            <span class="text-wrap"><input id="browser-name" class="text" type="text" value="my browser name" name="browsername" data-verify-type="enNum" /></span>
+            <span class="must">*</span>
+            <p id="stype1-error-name" class="error">Please check your browser name (max 14 characters: supports English alphabet, numbers and spaces)</p>
+
+            <div class="mode-help">
+                <div id="tooltip-name" class="tooltip dialog">
+                    <div class="tooltip-t">
+                        <div class="tooltip-b">This is the name of the app as it will appear on the screen of your phone.  To see an example, view the image on the right.</div>
+                    </div>
+                    <div class="tl"></div>
+                    <div class="tr"></div>
+                    <div class="bl"></div>
+                    <div class="br"></div>
+                </div>
+
+                <a class="help" href="#">Help</a>
+            </div>
+        </div>
+
+        <div class="mode mode-name mode-icon line">
+            <h2 class="title"><span>2</span>Upload a browser icon</h2>
+            <p class="tips">Please upload your own browser icon, or choose the default <span class="input-tips">(JPG or PNG, < 50KB, 72x72 pixels)</span></p>
+            <div class="mode-btn">
+                <a id="def-for-img" class="default-btn" href="#"><span>Default</span></a><!--
+                --><a id="for-img" class="custom-btn custom-current" href="#"><span>Customize</span></a>
+            </div>
+
+            <div class="mode-help">
+                <div id="tooltip-img" class="tooltip">
+                    <div class="tooltip-t">
+                        <div class="tooltip-b">
+                            <span class="size-wrap">
+                                <input id="custom-file-img" class="upload-img" type="file" name="appicon" />
+                            </span>
+                            <img id="custom-icon" src="/images/custom-exp.png" alt="thumbnail example" />
+                            <p id="prompt" class="prompt">72px*72px</p>
+                        </div>
+                    </div>
+                    <div class="tl"></div>
+                    <div class="tr"></div>
+                    <div class="bl"></div>
+                    <div class="br"></div>
+                </div>
+                <div id="stype1-error" class="error">Please use the correct image format (JPG or PNG, < 50KB, 72x72 pixels)</div>
+                <div id="tooltip-name" class="tooltip dialog">
+                    <div class="tooltip-t">
+                        <div class="tooltip-b">This is the icon of the app as it will appear on the screen of your phone.  Take a look at the image on the right.  You can either create (JPG or PNG, < 50KB, 72x72 pixels) and upload your own or choose the default.</div>
+                    </div>
+                    <div class="tl"></div>
+                    <div class="tr"></div>
+                    <div class="bl"></div>
+                    <div class="br"></div>
+                </div>
+
+                <a class="help" href="#">Help</a>
+            </div>
+        </div>
+
+        <div class="mode mode-splash line">
+            <h2 class="title"><span>3</span>Upload your splash screen</h2>
+            <p class="tips">This is the screen you’ll see when the browser is starting. You can upload any 480x800 image <span class="input-tips">(PNG or JPG, <500KB)</span> that you’d like to see.</p>
+
+            <div class="def-form">
+                <input id="browser-splash" type="radio" name="splash-radio" />
+                <label for="browser-splash">Default splash screen</label>
+            </div>
+            <div class="cus-form">
+                <input id="browser-splash-custom" checked="checked" type="radio" name="splash-radio" />
+                <label for="browser-splash-custom">Upload your own (480x800, PNG or JPG, <500KB)</label>
+                <label id="label-splash" class="custom-splash custom-splash-checked" for="splash-img" name="splash"></label>
+                <span class="splash-img-wrap"><input id="splash-img" class="splash-img" name="splash" type="file" /></span>
+                <img id="splash-preview" src="" />
+                <p id="error-splash" class="error">Please use the correct splash screen format (480x800, PNG or JPG, <500KB).</p>
+            </div>
+
+            <div class="mode-help">
+                <div id="tooltip-splash" class="tooltip dialog">
+                    <div class="tooltip-t">
+                        <div class="tooltip-b">This image will only be available for a few seconds. It is a great opportunity to showcase your individual or company logo. </div>
+                    </div>
+                    <div class="tl"></div>
+                    <div class="tr"></div>
+                    <div class="bl"></div>
+                    <div class="br"></div>
+                </div>
+                <a class="help" href="#">Help</a>
+            </div>
+
+        </div>
+
+        <div class="mode mode-homepage line">
+            <h2 class="title"><span>4</span>Set your browser’s homepage</h2>
+            <p class="tips">To customize, you can enter any URL to set your homepage. The default homepage contains a list of pre-selected websites.</p>
+            <div class="mode-btn">
+                <a id="def-for-input" class="default-btn" href="#"><span>Default</span></a><!--
+                --><a id="for-input" class="custom-btn custom-current" href="#"><span>Customize</span></a>
+            </div>
+
+            <div class="mode-help">
+                <div id="tooltip-input" class="tooltip">
+                    <div class="tooltip-t">
+                        <div class="tooltip-b">
+                            <input id="homepage-input" class="homepage-input" type="text" name="homepage" value="http://i.maxthon.com/" data-verify-type="url" />
+                        </div>
+                    </div>
+                    <div class="tl"></div>
+                    <div class="tr"></div>
+                    <div class="bl"></div>
+                    <div class="br"></div>
+                </div>
+                <p id="stype2-error" class="error">Please enter a valid web URL.</p>
+
+                <div id="tooltip-homepage" class="tooltip dialog">
+                    <div class="tooltip-t">
+                        <div class="tooltip-b">Set the default homepage for your browser.  The homepage is the first website you see when the browser starts.<br />
+                            For example, you can set http://www.google.com as your homepage. </div>
+                    </div>
+                    <div class="tl"></div>
+                    <div class="tr"></div>
+                    <div class="bl"></div>
+                    <div class="br"></div>
+                </div>
+
+                <a class="help" href="#">Help</a>
+            </div>
+        </div>
+
+        <div class="mode mode-email line">
+            <h2 class="title"><span>5</span>Please enter your email address</h2>
+            <p class="tips">A link to download your custom web browser will be sent to your email <span class="input-tips">(If you don't receive it within a few minutes, please be sure to check your spam box).<span></p>
+            <label for="send-email">Email:</label>
+            <span class="text-wrap"><input id="send-email" class="text" type="text" name="packagename" value="maxthon@maxthon.net" data-verify-type="letter" /></span>
+            <span class="must">*</span>
+            <p id="email-error" class="error">Please enter email.</p>
+        </div>
+
+        <div class="creat-btn">
+            <a id="create-apk" class="create-apk" href="#"><span>Create Android Browser</span></a>
+            <p class="tips"><a id="reset-all" href="#">Reset all settings to default</a></p>
+        </div>
+    </form>
+    <!-- // .custom-mode -->
+
+    <!-- .custom-footer -->
+<div class="custom-footer clearfix">
+    <p class="copyright">Copyright &copy; 1999-2017 Maxthon International Limited. All Rights Reserved.</p>
+    <p class="back-mail">Questions or feedback: <a href="mailto:makeyourbrowser@maxthon.com">makeyourbrowser@maxthon.com</a></p>
+</div>
+<!-- // .custom-footer -->
+
+
+
+    <!-- #popup -->
+<div id="shade" class="popup-shade"></div>
+
+<div id="popup" class="popup">
+    <div class="top">
+        <h4>MAXTHON</h4>
+        <a id="close-popup" href="#" class="close"></a>
+    </div>
+    <div class="pop-body">
+        <form>
+            <p id="fb-tips" class="fb-tips">Please use your <strong>facebook</strong> account to login.</p>
+            <span id="login-submit" class="submit"><span>Connect with Facebook</span></span>
+        </form>
+    </div>
+</div>
+<!-- // #popup -->
+
+
+<!-- #progress -->
+<div id="progress" class="popup progress">
+
+    <div class="top">
+        <h4>MAXTHON</h4>
+        <a id="close-progress" href="#" class="close"></a>
+    </div>
+    <div class="pop-body">
+        <!-- tooltips -->
+        <div id="sliderTips" class="sliderTips">
+            <p id="progress-tips" class="progress-tips">Creating web browser now...</p>
+            <span class="needle"></span>
+        </div>
+        <!-- progress bar -->
+        <div id="progress-complete" class="progress-complete">
+            <div class="percent"><span id="percent">0%</span><span>Complete</span></div>
+            <div id="graph" class="graph"></div>
+        </div>
+        <!-- download -->
+        <div id="progress-btn" class="progress-btn">
+            <a href="#" id="download" class="download">Download</a>
+        </div>
+
+        <!-- sharethis -->
+        <div class="sharethis">
+            <span class="share-note">Share with friends: </span>
+            <span class="st_twitter_large" displayText="Tweet"></span>
+            <span class="st_facebook_large" displayText="Facebook"></span>
+            <span class="st_googleplus_large" displayText="googleplus"></span>
+        </div>
+
+    </div>
+
+</div>
+<!-- // #progress -->
+
+
+<!-- #video-popup -->
+<div id="video-popup" class="video-popup">
+    <a id="close-video-popup" href="#" class="video-close"></a>
+    <div class="video-pop-body">
+    <object width="640" height="480">
+        <param name="movie" value="http://www.youtube.com/v/imLTwWWkfxQ?version=3&amp;hl=zh_CN&amp;rel=0"></param>
+        <param name="allowFullScreen" value="true"></param>
+        <param name="allowscriptaccess" value="always"></param>
+        <embed src="http://www.youtube.com/v/imLTwWWkfxQ?version=3&amp;hl=zh_CN&amp;rel=0"
+        type="application/x-shockwave-flash" width="640" height="480"
+        allowscriptaccess="always" allowfullscreen="true"></embed>
+    </object>
+    </div>
+</div>
+<!-- // #video-popup -->
+
+
+</div>
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/language/en/js/lan.js"></script>
+<script type='text/javascript' src='/min/g=js&amp;1589949371'></script><script type="text/javascript">
+$('.default-btn').click();
+$('#browser-splash').click();
+</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<img src="https://g.dcs.maxthon.com/web/cn/other?m=custom&n=display&o=custom_index&p=us" style="display: none;" />
+</body>
+
+</html>
+
